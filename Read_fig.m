@@ -1,21 +1,5 @@
-% for i = 1:18
-%     if reg_count(i) > 0
-%         
-%     end
-% 
-% end
-fields = fieldnames(S);
-fields(2)=[];
-fields(2)=[];
-fields(2)=[];
-fields(3)=[];
-Edge = rmfield(S,fields);
-
-
-
-% inpolygon(CityU(1)+0.02,CityU(2),Points_X,Points_Y)
-
-
-% 
-% pond.X = [pond.X(1) pond.X(1055) pond.X(1340) pond.X(1650)] ;
-% pond.Y = [pond.Y(1) pond.Y(1055) pond.Y(1340) pond.Y(1650)] ;
+A=[1 2 3;4 5 6;7 8 9];
+B=triu(A);
+sum_value = sum(sum(B));
+B=B/sum_value;
+A=tril(B',-1)+B;

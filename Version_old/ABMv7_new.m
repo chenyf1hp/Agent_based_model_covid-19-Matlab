@@ -18,7 +18,7 @@ sym_initial = 2;
 % Simulation parameters
 start_day = datetime('today');
 end_day = 0;
-n_days = 30;
+n_days = 10;
 
 %NPI_impact factor
 
@@ -28,11 +28,11 @@ npi_factor = 1;
 % Basic disease transmission parameters
 R0 = 2.5;           %basic reproduction number
 mu = 1/2.9;         %2.9 a rate of moving from I to R
-beta = 0.08;      %a rate of moving from S to I  0.016
 r = 0.55;          %ratio of transmission rate for asymptomatic over symptomatic cases
 epsilon = 1/2.9;   %a rate of moving from E to P
 gamma = 1/2.3;     %a rate of moving from P to I
 p = 30.8/100;      %Asymptomatic rate
+beta = R0*mu/(mu*r/gamma+p*r+1-p);   %a rate of moving from S to E  0.6644
 
 N_mean_contact = 20;
 Var_contact = 0.6;
